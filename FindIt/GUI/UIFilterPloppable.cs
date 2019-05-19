@@ -23,6 +23,15 @@ namespace FindIt.GUI
             Beautification,
             Monuments,
             //Wonders,
+
+            // Industries DLC
+            PlayerIndustry,
+
+            // Campus DLC
+            PlayerEducation,
+            Museums,
+            VarsitySports,
+
             All
         }
 
@@ -41,6 +50,12 @@ namespace FindIt.GUI
             if (itemClass.m_service == ItemClass.Service.PublicTransport) return Category.PublicTransport;
             if (itemClass.m_service == ItemClass.Service.Beautification) return Category.Beautification;
             if (itemClass.m_service == ItemClass.Service.Monument) return Category.Monuments;
+
+            if (itemClass.m_service == ItemClass.Service.PlayerIndustry) return Category.PlayerIndustry;
+
+            if (itemClass.m_service == ItemClass.Service.PlayerEducation) return Category.PlayerEducation;
+            if (itemClass.m_service == ItemClass.Service.Museums) return Category.Museums;
+            if (itemClass.m_service == ItemClass.Service.VarsitySports) return Category.VarsitySports;
             //if (itemClass.m_service == ItemClass.Service.Wonders) return Category.Wonders; ???????
 
             return Category.None;

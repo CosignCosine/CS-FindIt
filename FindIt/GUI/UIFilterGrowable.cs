@@ -14,14 +14,25 @@ namespace FindIt.GUI
             ResidentialHigh,
             CommercialLow,
             CommercialHigh,
-            Office,
+            OfficeGeneric,
             Industrial,
+
+            // Base-game industrial specializations
             Farming,
             Forestry,
             Oil,
             Ore,
+
+            // After Dark commercial specializations
             CommercialLeisure,
             CommercialTourism,
+
+            // Green Cities eco specializations
+            ResidentialLowEco,
+            ResidentialHighEco,
+            CommercialEco,
+            OfficeHightech,
+
             All
         }
 
@@ -40,6 +51,11 @@ namespace FindIt.GUI
                 "Ingame",
                 "Ingame",
                 "FindItAtlas",
+                "FindItAtlas",
+
+                "FindItAtlas",
+                "FindItAtlas",
+                "FindItAtlas",
                 "FindItAtlas"
             };
             
@@ -56,6 +72,11 @@ namespace FindIt.GUI
                 "IconPolicyOil",
                 "IconPolicyOre",
                 "IconPolicyLeisure",
+                "IconPolicyTourist",
+
+                "IconPolicyTourist",
+                "IconPolicyTourist",
+                "IconPolicyTourist",
                 "IconPolicyTourist"
             };
 
@@ -72,7 +93,11 @@ namespace FindIt.GUI
                 "Oil Industry",
                 "Ore Industry",
                 "Leisure commercial",
-                "Tourism commercial"
+                "Tourism commercial",
+                "Low density eco residential",
+                "High density eco commercial",
+                "Eco commercial",
+                "IT cluster"
             };
         }
 
@@ -92,7 +117,12 @@ namespace FindIt.GUI
             if (itemClass.m_subService == ItemClass.SubService.IndustrialForestry) return Category.Forestry;
             if (itemClass.m_subService == ItemClass.SubService.IndustrialOil) return Category.Oil;
             if (itemClass.m_subService == ItemClass.SubService.IndustrialOre) return Category.Ore;
-            if (itemClass.m_service == ItemClass.Service.Office) return Category.Office;
+            if (itemClass.m_subService == ItemClass.SubService.OfficeGeneric) return Category.OfficeGeneric;
+
+            if (itemClass.m_subService == ItemClass.SubService.ResidentialLowEco) return Category.ResidentialLowEco;
+            if (itemClass.m_subService == ItemClass.SubService.ResidentialHighEco) return Category.ResidentialHighEco;
+            if (itemClass.m_subService == ItemClass.SubService.CommercialEco) return Category.CommercialEco;
+            if (itemClass.m_subService == ItemClass.SubService.OfficeHightech) return Category.OfficeHightech;
 
             return Category.None;
         }
